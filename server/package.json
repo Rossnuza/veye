@@ -1,0 +1,15 @@
+{
+  "name": "veye-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Veye tracker gateway (EELINK protocol V2.3) + app API",
+  "scripts": {
+    "start": "node src/index.js",
+    "simulate": "node simulator.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
