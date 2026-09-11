@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iter for Schools</title>
+<meta name="description" content="Bring Iter to your school, not one parent at a time. We handle the devices, the app, and support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: #FBF7EF;
+    color: #232220;
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  a { color: #1B8A5E; text-decoration: none; }
+  a:hover { color: #14704C; }
+  h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
+  button { font-family: inherit; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div style="position:sticky; top:0; z-index:50; background:rgba(251,247,239,0.92); backdrop-filter:blur(8px); border-bottom:1px solid #ECE6DA;">
+  <div style="max-width:1160px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+    <a href="index.html" style="display:flex; align-items:center; gap:9px;">
+      <div style="width:30px; height:30px; border-radius:50%; background:#1B8A5E; display:flex; align-items:center; justify-content:center; flex:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="#fff"/><circle cx="12" cy="10" r="3.1" fill="#1B8A5E"/></svg>
+      </div>
+      <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.3px; color:#232220;">Iter</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:28px;">
+      <a href="index.html" style="font-weight:600; font-size:14.5px; color:#4A463F;">Home</a>
+      <a href="index.html#how" style="font-weight:600; font-size:14.5px; color:#4A463F;">How it works</a>
+      <a href="index.html#features" style="font-weight:600; font-size:14.5px; color:#4A463F;">Features</a>
+    </div>
+    <a href="#waitlist" style="flex:none; background:#1B8A5E; color:#fff; font-weight:700; font-size:14px; padding:10px 18px; border-radius:999px; box-shadow:0 4px 14px rgba(27,138,94,0.3);">Join the Waitlist</a>
+  </div>
+</div>
+
+<!-- FOR SCHOOLS HERO -->
+<div style="background:#232220; color:#fff; padding:90px 24px;">
+  <div style="max-width:1160px; margin:0 auto; display:flex; gap:56px; flex-wrap:wrap; align-items:center;">
+    <div style="flex:1 1 400px; min-width:0;">
+      <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#7FC9A3; margin-bottom:14px;">For schools</div>
+      <h1 style="font-weight:700; font-size:clamp(28px,4vw,44px); letter-spacing:-0.8px; margin:0 0 18px;">Bring Iter to your school, not one parent at a time</h1>
+      <p style="font-size:16px; line-height:1.6; color:rgba(255,255,255,0.7); margin:0 0 28px; max-width:480px;">We work with schools directly. The tracker fee bundles into annual school fees — one payment, once a year, alongside fees parents already pay.</p>
+      <a href="#waitlist" style="display:inline-flex; background:#fff; color:#232220; font-weight:700; font-size:15.5px; padding:15px 24px; border-radius:14px;">Partner with your school</a>
+    </div>
+    <div style="flex:1 1 340px; min-width:0; display:flex; flex-direction:column; gap:16px;">
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px;">
+        <div style="font-weight:700; font-size:15.5px; margin-bottom:4px;">Peace of mind for every family</div>
+        <div style="font-size:13.5px; color:rgba(255,255,255,0.65); line-height:1.5;">Parents at your school get live location, safe-zone alerts, and journey history for their children.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px;">
+        <div style="font-weight:700; font-size:15.5px; margin-bottom:4px;">Nothing for the school to run</div>
+        <div style="font-size:13.5px; color:rgba(255,255,255,0.65); line-height:1.5;">We handle the devices, the app, and support. The school just introduces it to parents.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px;">
+        <div style="font-weight:700; font-size:15.5px; margin-bottom:4px;">One fee, once a year</div>
+        <div style="font-size:13.5px; color:rgba(255,255,255,0.65); line-height:1.5;">The tracker fee bundles into annual school fees, alongside costs parents already pay.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCHOOL WAITLIST -->
+<div id="waitlist" style="max-width:760px; margin:0 auto; padding:100px 24px; text-align:center;">
+  <h2 style="font-weight:700; font-size:clamp(28px,4.4vw,42px); letter-spacing:-0.9px; margin:0 0 14px;">Bring peace of mind to every family at your school</h2>
+  <p style="font-size:16px; color:#6E6A62; margin:0 0 32px;">Leave your email and we'll reach out about piloting Iter at your school.</p>
+  <form id="waitlist-form" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; max-width:460px; margin:0 auto;">
+    <input id="waitlist-email" type="email" required placeholder="you@school.edu" style="flex:1 1 240px; min-width:0; background:#fff; border:1.5px solid #ECE6DA; border-radius:14px; padding:16px 18px; font-family:'Hanken Grotesk',sans-serif; font-size:15.5px; color:#232220; outline:none; box-sizing:border-box;">
+    <button type="submit" style="flex:none; border:none; background:#1B8A5E; color:#fff; font-weight:700; font-size:15.5px; padding:16px 24px; border-radius:14px; cursor:pointer; box-shadow:0 8px 20px rgba(27,138,94,0.3);">Notify Me</button>
+  </form>
+  <div id="waitlist-success" hidden style="margin-top:16px; font-size:14.5px; font-weight:700; color:#14704C;">Thanks — we'll be in touch about piloting Iter at your school.</div>
+</div>
+
+<!-- FOOTER -->
+<div style="border-top:1px solid #ECE6DA; padding:40px 24px;">
+  <div style="max-width:1160px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+    <a href="index.html" style="display:flex; align-items:center; gap:9px;">
+      <div style="width:26px; height:26px; border-radius:50%; background:#1B8A5E; display:flex; align-items:center; justify-content:center; flex:none;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="#fff"/><circle cx="12" cy="10" r="3.1" fill="#1B8A5E"/></svg>
+      </div>
+      <span style="font-weight:700; font-size:16px; color:#232220;">Iter</span>
+    </a>
+    <a href="mailto:hello@iter.app" style="font-size:13.5px; color:#6E6A62; font-weight:600;">hello@iter.app</a>
+    <div style="font-size:13px; color:#9A958B;">© 2026 Iter. All rights reserved.</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

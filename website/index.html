@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Veye — Know where your child is. Always.</title>
-<meta name="description" content="A discreet GPS tracker and a simple app that always know where your child is. Live location, safe-zone alerts, and full journey history.">
+<title>Iter — Know where they are. Always.</title>
+<meta name="description" content="Iter gives you live location and safety alerts for your child, wherever they go. Join the waitlist for early access.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     background: #FBF7EF;
@@ -22,21 +23,6 @@
   a:hover { color: #14704C; }
   h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
   button { font-family: inherit; }
-  .tab-btn {
-    border: none;
-    cursor: pointer;
-    padding: 9px 16px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 13.5px;
-    background: none;
-    color: #9A958B;
-  }
-  .tab-btn.is-active {
-    background: #fff;
-    color: #1B8A5E;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-  }
   .showcase-strip {
     display: flex;
     gap: 24px;
@@ -57,6 +43,12 @@
     grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
     gap: 28px;
   }
+  .card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+  }
 </style>
 </head>
 <body>
@@ -68,14 +60,14 @@
       <div style="width:30px; height:30px; border-radius:50%; background:#1B8A5E; display:flex; align-items:center; justify-content:center; flex:none;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="#fff"/><circle cx="12" cy="10" r="3.1" fill="#1B8A5E"/></svg>
       </div>
-      <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.3px;">Veye</span>
+      <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.3px;">Iter</span>
     </div>
     <div style="display:flex; align-items:center; gap:28px;">
       <a href="#how" style="font-weight:600; font-size:14.5px; color:#4A463F;">How it works</a>
       <a href="#features" style="font-weight:600; font-size:14.5px; color:#4A463F;">Features</a>
-      <a href="#schools" style="font-weight:600; font-size:14.5px; color:#4A463F;">For schools</a>
+      <a href="schools.html" style="font-weight:600; font-size:14.5px; color:#4A463F;">For schools</a>
     </div>
-    <a href="#waitlist" style="flex:none; background:#1B8A5E; color:#fff; font-weight:700; font-size:14px; padding:10px 18px; border-radius:999px; box-shadow:0 4px 14px rgba(27,138,94,0.3);">Join the waitlist</a>
+    <a href="#waitlist" style="flex:none; background:#1B8A5E; color:#fff; font-weight:700; font-size:14px; padding:10px 18px; border-radius:999px; box-shadow:0 4px 14px rgba(27,138,94,0.3);">Join the Waitlist</a>
   </div>
 </div>
 
@@ -83,16 +75,16 @@
 <div style="max-width:1160px; margin:0 auto; padding:64px 24px 40px; display:flex; align-items:center; gap:48px; flex-wrap:wrap;">
   <div style="flex:1 1 420px; min-width:0;">
     <div style="display:inline-flex; align-items:center; gap:7px; background:#E4F0E8; color:#14704C; font-weight:700; font-size:12.5px; letter-spacing:0.3px; padding:6px 13px; border-radius:999px; margin-bottom:20px;">
-      <span style="width:6px; height:6px; border-radius:50%; background:#14704C;"></span>PRE-LAUNCH · COMING TO YAOUNDÉ &amp; DOUALA
+      <span style="width:6px; height:6px; border-radius:50%; background:#14704C;"></span>PRE-LAUNCH · EARLY ACCESS OPENING SOON
     </div>
-    <h1 style="font-weight:700; font-size:clamp(34px,5vw,56px); line-height:1.05; letter-spacing:-1.2px; margin:0 0 20px;">Know where your child is. Always.</h1>
-    <p style="font-size:18px; line-height:1.5; color:#6E6A62; margin:0 0 32px; max-width:460px;">A discreet GPS tracker and a simple app that always know where your child is. Live location, safe-zone alerts, and full journey history — no monthly bills, no guesswork.</p>
+    <h1 style="font-weight:700; font-size:clamp(34px,5vw,56px); line-height:1.05; letter-spacing:-1.2px; margin:0 0 20px;">Know where they are. Always.</h1>
+    <p style="font-size:18px; line-height:1.5; color:#6E6A62; margin:0 0 32px; max-width:460px;">Iter gives you live location and safety alerts for your child, wherever they go.</p>
     <form id="hero-form" style="display:flex; gap:10px; flex-wrap:wrap; max-width:460px;">
       <input id="hero-email" type="email" required placeholder="you@email.com" style="flex:1 1 220px; min-width:0; background:#fff; border:1.5px solid #ECE6DA; border-radius:14px; padding:15px 17px; font-family:'Hanken Grotesk',sans-serif; font-size:15.5px; color:#232220; outline:none; box-sizing:border-box;">
-      <button id="hero-submit" type="submit" style="flex:none; border:none; background:#1B8A5E; color:#fff; font-weight:700; font-size:15.5px; padding:15px 22px; border-radius:14px; cursor:pointer; box-shadow:0 8px 20px rgba(27,138,94,0.3);">Join the waitlist</button>
+      <button id="hero-submit" type="submit" style="flex:none; border:none; background:#1B8A5E; color:#fff; font-weight:700; font-size:15.5px; padding:15px 22px; border-radius:14px; cursor:pointer; box-shadow:0 8px 20px rgba(27,138,94,0.3);">Join the Waitlist</button>
     </form>
-    <div id="hero-success" hidden style="margin-top:12px; font-size:14px; font-weight:700; color:#14704C;">You're on the list — we'll email you when Veye reaches your school.</div>
-    <p style="margin:14px 0 0; font-size:13px; color:#9A958B;">Free to join. No spam, no commitment.</p>
+    <div id="hero-success" hidden style="margin-top:12px; font-size:14px; font-weight:700; color:#14704C;">You're on the list — we'll email you the moment Iter launches.</div>
+    <p style="margin:14px 0 0; font-size:13px; color:#9A958B;">Limited early access spots for our first launch.</p>
   </div>
   <div style="flex:1 1 340px; min-width:0; display:flex; justify-content:center; position:relative;">
     <div style="position:absolute; top:14%; left:-6px; background:#fff; padding:10px 15px; border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,0.1); display:flex; align-items:center; gap:8px; z-index:2;">
@@ -103,38 +95,63 @@
       <span style="font-size:13px; font-weight:700; color:#1B8A5E;">🔋 82%</span>
     </div>
     <div style="width:330px; border-radius:44px; overflow:hidden; box-shadow:0 40px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.12);">
-      <img src="screens/home-crop.png" alt="Veye app — live location screen" style="display:block; width:100%; height:auto;">
+      <img src="screens/home-crop.png" alt="Iter app — live location screen" style="display:block; width:100%; height:auto;">
     </div>
   </div>
 </div>
 
+<!-- THE PROBLEM -->
+<div style="max-width:1160px; margin:0 auto; padding:70px 24px 40px;">
+  <div style="text-align:center; max-width:640px; margin:0 auto 40px;">
+    <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#1B8A5E; margin-bottom:14px;">The problem</div>
+    <h2 style="font-weight:700; font-size:clamp(28px,4vw,38px); letter-spacing:-0.8px; margin:0 0 20px;">The question every parent asks: is my child safe right now?</h2>
+    <p style="font-size:16px; line-height:1.6; color:#6E6A62; margin:0;">Calling isn't enough. A missed call, a dead phone, or no answer at all leaves you guessing. By the time anyone else notices something is wrong, the time that matters most has already passed.</p>
+  </div>
+  <p style="text-align:center; font-weight:700; font-size:15px; margin:0 0 32px;">This isn't a rare worry. It's a documented, global reality:</p>
+  <div class="step-grid" style="margin-bottom:36px;">
+    <div class="card" style="text-align:center;">
+      <div style="font-weight:700; font-size:clamp(30px,4vw,38px); letter-spacing:-1px; color:#1B8A5E; margin-bottom:8px;">460,000+</div>
+      <p style="font-size:14.5px; line-height:1.55; color:#6E6A62; margin:0;">children are reported missing every year in the United States.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-weight:700; font-size:clamp(30px,4vw,38px); letter-spacing:-1px; color:#1B8A5E; margin-bottom:8px;">Every 2 min</div>
+      <p style="font-size:14.5px; line-height:1.55; color:#6E6A62; margin:0;">a child goes missing across Europe — about 250,000 cases a year.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-weight:700; font-size:clamp(30px,4vw,38px); letter-spacing:-1px; color:#1B8A5E; margin-bottom:8px;">112,000+</div>
+      <p style="font-size:14.5px; line-height:1.55; color:#6E6A62; margin:0;">children are reported missing annually in the United Kingdom.</p>
+    </div>
+  </div>
+  <p style="text-align:center; max-width:640px; margin:0 auto; font-size:15px; line-height:1.6; color:#6E6A62;">Most of these moments happen during ordinary daily life: the walk to school, the ride home, a quick errand — the exact moments a parent can't always be right beside their child.</p>
+</div>
+
 <!-- HOW IT WORKS -->
-<div id="how" style="max-width:1160px; margin:0 auto; padding:90px 24px 40px;">
+<div id="how" style="max-width:1160px; margin:0 auto; padding:70px 24px 40px;">
   <div style="text-align:center; max-width:560px; margin:0 auto 52px;">
     <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#1B8A5E; margin-bottom:14px;">How it works</div>
     <h2 style="font-weight:700; font-size:clamp(28px,4vw,38px); letter-spacing:-0.8px; margin:0;">From tracker to peace of mind in three steps</h2>
   </div>
   <div class="step-grid">
-    <div style="background:#fff; border-radius:22px; padding:28px; box-shadow:0 4px 18px rgba(0,0,0,0.05);">
+    <div class="card">
       <div style="width:44px; height:44px; border-radius:13px; background:#E4F0E8; color:#14704C; font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">1</div>
-      <h3 style="font-weight:700; font-size:19px; margin:0 0 8px; letter-spacing:-0.2px;">Link the tracker</h3>
-      <p style="font-size:14.5px; line-height:1.55; color:#6E6A62; margin:0;">Scan the code on the back of the device, or type it in. No technical setup — it's paired in under a minute.</p>
+      <h3 style="font-weight:700; font-size:19px; margin:0 0 8px; letter-spacing:-0.2px;">Wear it, forget it</h3>
+      <p style="font-size:14.5px; line-height:1.55; color:#6E6A62; margin:0;">Your child wears a small, durable tracker. No setup needed on their end, nothing to remember to turn on.</p>
     </div>
-    <div style="background:#fff; border-radius:22px; padding:28px; box-shadow:0 4px 18px rgba(0,0,0,0.05);">
+    <div class="card">
       <div style="width:44px; height:44px; border-radius:13px; background:#E4F0E8; color:#14704C; font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">2</div>
-      <h3 style="font-weight:700; font-size:19px; margin:0 0 8px; letter-spacing:-0.2px;">See the location</h3>
-      <p style="font-size:14.5px; line-height:1.55; color:#6E6A62; margin:0;">Open the app any time and see exactly where your child is on a live map, updated every 60 seconds.</p>
+      <h3 style="font-weight:700; font-size:19px; margin:0 0 8px; letter-spacing:-0.2px;">See exactly where they are</h3>
+      <p style="font-size:14.5px; line-height:1.55; color:#6E6A62; margin:0;">Open the app and see their exact location on a map, updated automatically throughout the day.</p>
     </div>
-    <div style="background:#fff; border-radius:22px; padding:28px; box-shadow:0 4px 18px rgba(0,0,0,0.05);">
+    <div class="card">
       <div style="width:44px; height:44px; border-radius:13px; background:#E4F0E8; color:#14704C; font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">3</div>
-      <h3 style="font-weight:700; font-size:19px; margin:0 0 8px; letter-spacing:-0.2px;">Get instant alerts</h3>
-      <p style="font-size:14.5px; line-height:1.55; color:#6E6A62; margin:0;">Set up school, home, or grandma's house as safe zones. Get a notification the moment your child arrives or leaves.</p>
+      <h3 style="font-weight:700; font-size:19px; margin:0 0 8px; letter-spacing:-0.2px;">Get notified instantly</h3>
+      <p style="font-size:14.5px; line-height:1.55; color:#6E6A62; margin:0;">Set safe zones for home, school, or a relative's house, and get notified the instant they arrive or leave.</p>
     </div>
   </div>
 </div>
 
 <!-- DEVICE + APP SHOWCASE -->
-<div style="max-width:1160px; margin:0 auto; padding:90px 24px 20px;">
+<div style="max-width:1160px; margin:0 auto; padding:70px 24px 20px;">
   <div style="display:flex; gap:48px; align-items:center; flex-wrap:wrap; margin-bottom:56px;">
     <div style="flex:1 1 320px; min-width:0;">
       <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#1B8A5E; margin-bottom:14px;">The hardware</div>
@@ -189,7 +206,7 @@
 </div>
 
 <!-- FEATURES -->
-<div id="features" style="max-width:1160px; margin:0 auto; padding:90px 24px 40px;">
+<div id="features" style="max-width:1160px; margin:0 auto; padding:70px 24px 40px;">
   <div style="text-align:center; max-width:560px; margin:0 auto 52px;">
     <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#1B8A5E; margin-bottom:14px;">Features</div>
     <h2 style="font-weight:700; font-size:clamp(28px,4vw,38px); letter-spacing:-0.8px; margin:0;">Everything a parent needs to know</h2>
@@ -198,75 +215,94 @@
     <div style="background:#fff; padding:30px 26px;">
       <div style="font-size:24px; margin-bottom:14px;">📍</div>
       <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Live location</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">See exactly where your child is right now, updated every 60 seconds.</p>
+      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Updated automatically, so you always know exactly where they are.</p>
     </div>
     <div style="background:#fff; padding:30px 26px;">
       <div style="font-size:24px; margin-bottom:14px;">🛎️</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Arrival &amp; departure alerts</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Instant notification when your child arrives at or leaves any safe zone.</p>
+      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Safe zone alerts</h3>
+      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Get notified the instant they arrive at or leave a safe zone.</p>
     </div>
     <div style="background:#fff; padding:30px 26px;">
       <div style="font-size:24px; margin-bottom:14px;">🗺️</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Journey history</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">A full record of every route your child took, replayed step by step.</p>
-    </div>
-    <div style="background:#fff; padding:30px 26px;">
-      <div style="font-size:24px; margin-bottom:14px;">🔋</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Battery alerts</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">A heads-up when the tracker is running low, so you can remind them to charge it.</p>
+      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Full journey history</h3>
+      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Replay any day, step by step.</p>
     </div>
     <div style="background:#fff; padding:30px 26px;">
       <div style="font-size:24px; margin-bottom:14px;">📶</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Offline store &amp; forward</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">The tracker saves locations through dead zones and sends them once signal returns.</p>
+      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Works with weak signal</h3>
+      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Store-and-forward technology means the tracker never loses the story, even offline.</p>
     </div>
     <div style="background:#fff; padding:30px 26px;">
       <div style="font-size:24px; margin-bottom:14px;">👪</div>
       <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Multiple guardians</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Both parents, or a grandparent, can link to the same device and see location independently.</p>
+      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Any guardian you trust can follow along, from their own phone.</p>
+    </div>
+    <div style="background:#fff; padding:30px 26px;">
+      <div style="font-size:24px; margin-bottom:14px;">🔋</div>
+      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Battery alerts</h3>
+      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">So you're never caught off guard.</p>
+    </div>
+    <div style="background:#fff; padding:30px 26px;">
+      <div style="font-size:24px; margin-bottom:14px;">🧭</div>
+      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">One-tap directions</h3>
+      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Get directions straight to your child's last known location.</p>
     </div>
   </div>
 </div>
 
-<!-- FOR SCHOOLS -->
-<div id="schools" style="background:#232220; color:#fff; padding:90px 24px; margin-top:40px;">
-  <div style="max-width:1160px; margin:0 auto; display:flex; gap:56px; flex-wrap:wrap; align-items:center;">
-    <div style="flex:1 1 400px; min-width:0;">
-      <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#7FC9A3; margin-bottom:14px;">For schools</div>
-      <h2 style="font-weight:700; font-size:clamp(28px,4vw,38px); letter-spacing:-0.8px; margin:0 0 18px;">Bring Veye to your school, not one parent at a time</h2>
-      <p style="font-size:16px; line-height:1.6; color:rgba(255,255,255,0.7); margin:0 0 28px; max-width:480px;">We work with schools directly. The tracker fee bundles into annual school fees — one payment, once a year, alongside fees parents already pay.</p>
-      <a href="#waitlist" data-school-cta style="display:inline-flex; background:#fff; color:#232220; font-weight:700; font-size:15.5px; padding:15px 24px; border-radius:14px;">Partner with your school</a>
+<!-- WHY THIS MATTERS -->
+<div style="max-width:760px; margin:0 auto; padding:70px 24px; text-align:center;">
+  <h2 style="font-weight:700; font-size:clamp(26px,3.6vw,34px); letter-spacing:-0.7px; margin:0 0 16px;">Why this matters</h2>
+  <p style="font-size:16px; line-height:1.65; color:#6E6A62; margin:0;">The risk here isn't hypothetical — it's well documented, and it's concentrated in exactly the everyday moments most families assume are safe. A tracking device paired with a simple app directly closes that gap: instead of finding out hours later that something was wrong, a parent knows immediately, and can act immediately.</p>
+</div>
+
+<!-- PRICING CTA -->
+<div style="background:#1B8A5E; color:#fff; padding:64px 24px; margin-top:20px;">
+  <div style="max-width:640px; margin:0 auto; text-align:center;">
+    <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-bottom:14px;">Pricing</div>
+    <h2 style="font-weight:700; font-size:clamp(26px,3.6vw,34px); letter-spacing:-0.7px; margin:0 0 14px;">Don't wait until you need it to wish you had it.</h2>
+    <p style="font-size:16px; line-height:1.6; color:rgba(255,255,255,0.85); margin:0 0 28px;">Join the waitlist now to lock in early access pricing and be first in line when Iter launches.</p>
+    <a href="#waitlist" style="display:inline-flex; background:#fff; color:#14704C; font-weight:700; font-size:15.5px; padding:15px 26px; border-radius:14px;">Join the Waitlist</a>
+    <p style="margin:16px 0 0; font-size:13px; color:rgba(255,255,255,0.7);">No payment now. Just a spot, saved.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div style="max-width:760px; margin:0 auto; padding:80px 24px 40px;">
+  <div style="text-align:center; max-width:560px; margin:0 auto 44px;">
+    <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#1B8A5E; margin-bottom:14px;">FAQ</div>
+    <h2 style="font-weight:700; font-size:clamp(26px,3.6vw,34px); letter-spacing:-0.7px; margin:0;">Trust &amp; questions</h2>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:16px;">
+    <div class="card">
+      <h3 style="font-weight:700; font-size:16.5px; margin:0 0 8px; letter-spacing:-0.1px;">Is this hard to set up?</h3>
+      <p style="font-size:14.5px; line-height:1.6; color:#6E6A62; margin:0;">No. No technical knowledge needed. Scan a code, enter your child's name, and you're connected.</p>
     </div>
-    <div style="flex:1 1 340px; min-width:0; display:flex; flex-direction:column; gap:16px;">
-      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px;">
-        <div style="font-weight:700; font-size:15.5px; margin-bottom:4px;">Peace of mind for every family</div>
-        <div style="font-size:13.5px; color:rgba(255,255,255,0.65); line-height:1.5;">Parents at your school get live location, safe-zone alerts, and journey history for their children.</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px;">
-        <div style="font-weight:700; font-size:15.5px; margin-bottom:4px;">Nothing for the school to run</div>
-        <div style="font-size:13.5px; color:rgba(255,255,255,0.65); line-height:1.5;">We handle the devices, the app, and support. The school just introduces it to parents.</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px;">
-        <div style="font-weight:700; font-size:15.5px; margin-bottom:4px;">One fee, once a year</div>
-        <div style="font-size:13.5px; color:rgba(255,255,255,0.65); line-height:1.5;">The tracker fee bundles into annual school fees, alongside costs parents already pay.</div>
-      </div>
+    <div class="card">
+      <h3 style="font-weight:700; font-size:16.5px; margin:0 0 8px; letter-spacing:-0.1px;">What if there's no signal?</h3>
+      <p style="font-size:14.5px; line-height:1.6; color:#6E6A62; margin:0;">The device stores locations and sends them the moment signal returns, so you never lose the story of where your child has been.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-weight:700; font-size:16.5px; margin:0 0 8px; letter-spacing:-0.1px;">Can more than one parent use it?</h3>
+      <p style="font-size:14.5px; line-height:1.6; color:#6E6A62; margin:0;">Yes. Invite any guardian — a co-parent, a grandparent, anyone you trust — to follow along on their own phone.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-weight:700; font-size:16.5px; margin:0 0 8px; letter-spacing:-0.1px;">Is my child's data private?</h3>
+      <p style="font-size:14.5px; line-height:1.6; color:#6E6A62; margin:0;">We take this seriously. Our full privacy policy is being finalized and will be published before launch.</p>
     </div>
   </div>
 </div>
 
-<!-- WAITLIST -->
-<div id="waitlist" style="max-width:760px; margin:0 auto; padding:100px 24px; text-align:center;">
-  <h2 id="waitlist-headline" style="font-weight:700; font-size:clamp(28px,4.4vw,42px); letter-spacing:-0.9px; margin:0 0 14px;">Be first to know when Veye arrives</h2>
-  <p id="waitlist-sub" style="font-size:16px; color:#6E6A62; margin:0 0 32px;">Leave your email and we'll notify you the moment Veye is available at your child's school.</p>
-  <div style="display:inline-flex; background:#F2EEE4; border-radius:10px; padding:4px; margin-bottom:28px;">
-    <button id="parent-tab" type="button" class="tab-btn is-active">I'm a parent</button>
-    <button id="school-tab" type="button" class="tab-btn">I'm from a school</button>
-  </div>
+<!-- FINAL CTA / WAITLIST -->
+<div id="waitlist" style="max-width:760px; margin:0 auto; padding:80px 24px 100px; text-align:center;">
+  <h2 style="font-weight:700; font-size:clamp(28px,4.4vw,42px); letter-spacing:-0.9px; margin:0 0 14px;">Your child's safety shouldn't depend on luck.</h2>
+  <p style="font-size:16px; color:#6E6A62; margin:0 0 32px;">Join the waitlist today, and be first to know when Iter launches.</p>
   <form id="waitlist-form" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; max-width:460px; margin:0 auto;">
     <input id="waitlist-email" type="email" required placeholder="you@email.com" style="flex:1 1 240px; min-width:0; background:#fff; border:1.5px solid #ECE6DA; border-radius:14px; padding:16px 18px; font-family:'Hanken Grotesk',sans-serif; font-size:15.5px; color:#232220; outline:none; box-sizing:border-box;">
-    <button type="submit" style="flex:none; border:none; background:#1B8A5E; color:#fff; font-weight:700; font-size:15.5px; padding:16px 24px; border-radius:14px; cursor:pointer; box-shadow:0 8px 20px rgba(27,138,94,0.3);">Notify me</button>
+    <button type="submit" style="flex:none; border:none; background:#1B8A5E; color:#fff; font-weight:700; font-size:15.5px; padding:16px 24px; border-radius:14px; cursor:pointer; box-shadow:0 8px 20px rgba(27,138,94,0.3);">Reserve My Spot</button>
   </form>
   <div id="waitlist-success" hidden style="margin-top:16px; font-size:14.5px; font-weight:700; color:#14704C;">Thanks — you're on the list. We'll be in touch soon.</div>
+  <p style="margin:14px 0 0; font-size:13px; color:#9A958B;">We'll only email you when Iter is ready.</p>
 </div>
 
 <!-- FOOTER -->
@@ -276,10 +312,10 @@
       <div style="width:26px; height:26px; border-radius:50%; background:#1B8A5E; display:flex; align-items:center; justify-content:center; flex:none;">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="#fff"/><circle cx="12" cy="10" r="3.1" fill="#1B8A5E"/></svg>
       </div>
-      <span style="font-weight:700; font-size:16px;">Veye</span>
+      <span style="font-weight:700; font-size:16px;">Iter</span>
     </div>
-    <div style="font-size:13.5px; color:#9A958B;">Cameroon · <a href="mailto:hello@veye.app" style="color:#6E6A62; font-weight:600;">hello@veye.app</a></div>
-    <div style="font-size:13px; color:#9A958B;">© 2026 Veye. All rights reserved.</div>
+    <a href="mailto:hello@iter.app" style="font-size:13.5px; color:#6E6A62; font-weight:600;">hello@iter.app</a>
+    <div style="font-size:13px; color:#9A958B;">© 2026 Iter. All rights reserved.</div>
   </div>
 </div>
 
