@@ -23,12 +23,6 @@
   a:hover { color: #14704C; }
   h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
   button { font-family: inherit; }
-  .showcase-strip {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    padding: 8px 4px 24px;
-  }
   .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
@@ -48,6 +42,11 @@
     border-radius: 22px;
     padding: 28px;
     box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+  }
+  .shot-frame {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
   }
 </style>
 </head>
@@ -150,9 +149,9 @@
   </div>
 </div>
 
-<!-- DEVICE + APP SHOWCASE -->
+<!-- THE HARDWARE -->
 <div style="max-width:1160px; margin:0 auto; padding:70px 24px 20px;">
-  <div style="display:flex; gap:48px; align-items:center; flex-wrap:wrap; margin-bottom:56px;">
+  <div style="display:flex; gap:48px; align-items:center; flex-wrap:wrap;">
     <div style="flex:1 1 320px; min-width:0;">
       <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#1B8A5E; margin-bottom:14px;">The hardware</div>
       <h2 style="font-weight:700; font-size:clamp(28px,4vw,36px); letter-spacing:-0.8px; margin:0 0 16px;">One tiny tracker. Worn and forgotten.</h2>
@@ -172,80 +171,102 @@
       </div>
     </div>
   </div>
-
-  <div style="text-align:center; max-width:560px; margin:0 auto 40px;">
-    <h2 style="font-weight:700; font-size:clamp(26px,3.6vw,34px); letter-spacing:-0.7px; margin:0 0 12px;">A simple app for a stressful question</h2>
-    <p style="font-size:15.5px; color:#6E6A62; margin:0;">Live map, journey history, safe zones, and settings — everything a parent needs, nothing they don't.</p>
-  </div>
-  <div class="showcase-strip">
-    <div style="flex:none; text-align:center;">
-      <div style="width:210px; border-radius:32px; overflow:hidden; box-shadow:0 16px 40px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.1);">
-        <img src="screens/history-crop.png" alt="Journey history screen" style="display:block; width:100%; height:auto;">
-      </div>
-      <div style="font-weight:700; font-size:14px; margin-top:10px;">Journey history</div>
-    </div>
-    <div style="flex:none; text-align:center;">
-      <div style="width:210px; border-radius:32px; overflow:hidden; box-shadow:0 16px 40px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.1);">
-        <img src="screens/zones-crop.png" alt="Safe zones screen" style="display:block; width:100%; height:auto;">
-      </div>
-      <div style="font-weight:700; font-size:14px; margin-top:10px;">Safe zones</div>
-    </div>
-    <div style="flex:none; text-align:center;">
-      <div style="width:210px; border-radius:32px; overflow:hidden; box-shadow:0 16px 40px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.1);">
-        <img src="screens/pair-crop.png" alt="Tracker pairing screen" style="display:block; width:100%; height:auto;">
-      </div>
-      <div style="font-weight:700; font-size:14px; margin-top:10px;">Easy pairing</div>
-    </div>
-    <div style="flex:none; text-align:center;">
-      <div style="width:210px; border-radius:32px; overflow:hidden; box-shadow:0 16px 40px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.1);">
-        <img src="screens/settings-crop.png" alt="Settings screen" style="display:block; width:100%; height:auto;">
-      </div>
-      <div style="font-weight:700; font-size:14px; margin-top:10px;">Full control</div>
-    </div>
-  </div>
 </div>
 
-<!-- FEATURES -->
-<div id="features" style="max-width:1160px; margin:0 auto; padding:70px 24px 40px;">
-  <div style="text-align:center; max-width:560px; margin:0 auto 52px;">
+<!-- APP + FEATURES, MERGED: SCREENS DEMONSTRATE THE FEATURES -->
+<div id="features" style="max-width:1160px; margin:0 auto; padding:90px 24px 40px;">
+  <div style="text-align:center; max-width:560px; margin:0 auto 70px;">
     <div style="font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#1B8A5E; margin-bottom:14px;">Features</div>
-    <h2 style="font-weight:700; font-size:clamp(28px,4vw,38px); letter-spacing:-0.8px; margin:0;">Everything a parent needs to know</h2>
+    <h2 style="font-weight:700; font-size:clamp(28px,4vw,38px); letter-spacing:-0.8px; margin:0 0 14px;">Everything a parent needs to know</h2>
+    <p style="font-size:15.5px; color:#6E6A62; margin:0;">Live map, journey history, safe zones, and settings — everything a parent needs, nothing they don't.</p>
   </div>
+
+  <!-- Row 1: Journey history -->
+  <div style="display:flex; gap:56px; align-items:center; flex-wrap:wrap; margin-bottom:88px;">
+    <div style="flex:1 1 280px; min-width:240px; display:flex; justify-content:center;">
+      <div style="width:280px; border-radius:36px; box-shadow:0 20px 48px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.1);">
+        <div class="shot-frame" style="border-radius:36px;">
+          <img src="screens/history-crop.png" alt="Journey history screen" style="display:block; width:100%; height:auto;">
+        </div>
+      </div>
+    </div>
+    <div style="flex:1 1 320px; min-width:260px;">
+      <div style="font-size:26px; margin-bottom:14px;">🗺️</div>
+      <h3 style="font-weight:700; font-size:22px; margin:0 0 10px; letter-spacing:-0.3px;">Full journey history</h3>
+      <p style="font-size:15.5px; line-height:1.6; color:#6E6A62; margin:0; max-width:400px;">Replay any day, step by step. Every stop your child made, automatically mapped and timestamped.</p>
+    </div>
+  </div>
+
+  <!-- Row 2: Safe zones (reversed) -->
+  <div style="display:flex; gap:56px; align-items:center; flex-wrap:wrap; margin-bottom:88px;">
+    <div style="flex:1 1 320px; min-width:260px; order:2;">
+      <div style="font-size:26px; margin-bottom:14px;">🛎️</div>
+      <h3 style="font-weight:700; font-size:22px; margin:0 0 10px; letter-spacing:-0.3px;">Safe zone alerts</h3>
+      <p style="font-size:15.5px; line-height:1.6; color:#6E6A62; margin:0; max-width:400px;">Set up home, school, or a relative's house as a safe zone, and get notified the instant they arrive or leave.</p>
+    </div>
+    <div style="flex:1 1 280px; min-width:240px; display:flex; justify-content:center; order:1;">
+      <div style="width:280px; border-radius:36px; box-shadow:0 20px 48px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.1);">
+        <div class="shot-frame" style="border-radius:36px;">
+          <img src="screens/zones-crop.png" alt="Safe zones screen" style="display:block; width:100%; height:auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: Pairing -->
+  <div style="display:flex; gap:56px; align-items:center; flex-wrap:wrap; margin-bottom:88px;">
+    <div style="flex:1 1 280px; min-width:240px; display:flex; justify-content:center;">
+      <div style="width:280px; border-radius:36px; box-shadow:0 20px 48px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.1);">
+        <div class="shot-frame" style="border-radius:36px;">
+          <img src="screens/pair-crop.png" alt="Tracker pairing screen" style="display:block; width:100%; height:auto;">
+        </div>
+      </div>
+    </div>
+    <div style="flex:1 1 320px; min-width:260px;">
+      <div style="font-size:26px; margin-bottom:14px;">📲</div>
+      <h3 style="font-weight:700; font-size:22px; margin:0 0 10px; letter-spacing:-0.3px;">Set up in under a minute</h3>
+      <p style="font-size:15.5px; line-height:1.6; color:#6E6A62; margin:0; max-width:400px;">Scan the code on the back of the tracker, or type it in. No accounts, no complexity — just link and go.</p>
+    </div>
+  </div>
+
+  <!-- Row 4: Settings / guardians (reversed) -->
+  <div style="display:flex; gap:56px; align-items:center; flex-wrap:wrap; margin-bottom:64px;">
+    <div style="flex:1 1 320px; min-width:260px; order:2;">
+      <div style="font-size:26px; margin-bottom:14px;">👪</div>
+      <h3 style="font-weight:700; font-size:22px; margin:0 0 10px; letter-spacing:-0.3px;">Multiple guardians, full control</h3>
+      <p style="font-size:15.5px; line-height:1.6; color:#6E6A62; margin:0; max-width:400px;">Invite any guardian you trust — a co-parent, a grandparent — to follow along from their own phone, and manage every child from one place.</p>
+    </div>
+    <div style="flex:1 1 280px; min-width:240px; display:flex; justify-content:center; order:1;">
+      <div style="width:280px; border-radius:36px; box-shadow:0 20px 48px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.1);">
+        <div class="shot-frame" style="border-radius:36px;">
+          <img src="screens/settings-crop.png" alt="Settings screen" style="display:block; width:100%; height:auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Remaining features, compact strip -->
+  <div style="text-align:center; font-weight:700; font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#9A958B; margin-bottom:20px;">Plus</div>
   <div class="feature-grid">
-    <div style="background:#fff; padding:30px 26px;">
-      <div style="font-size:24px; margin-bottom:14px;">📍</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Live location</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Updated automatically, so you always know exactly where they are.</p>
+    <div style="background:#fff; padding:26px 24px;">
+      <div style="font-size:22px; margin-bottom:12px;">📍</div>
+      <h3 style="font-weight:700; font-size:16px; margin:0 0 6px; letter-spacing:-0.2px;">Live location</h3>
+      <p style="font-size:13.5px; line-height:1.5; color:#6E6A62; margin:0;">Updated automatically, so you always know exactly where they are.</p>
     </div>
-    <div style="background:#fff; padding:30px 26px;">
-      <div style="font-size:24px; margin-bottom:14px;">🛎️</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Safe zone alerts</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Get notified the instant they arrive at or leave a safe zone.</p>
+    <div style="background:#fff; padding:26px 24px;">
+      <div style="font-size:22px; margin-bottom:12px;">📶</div>
+      <h3 style="font-weight:700; font-size:16px; margin:0 0 6px; letter-spacing:-0.2px;">Works with weak signal</h3>
+      <p style="font-size:13.5px; line-height:1.5; color:#6E6A62; margin:0;">Store-and-forward technology means the tracker never loses the story, even offline.</p>
     </div>
-    <div style="background:#fff; padding:30px 26px;">
-      <div style="font-size:24px; margin-bottom:14px;">🗺️</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Full journey history</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Replay any day, step by step.</p>
+    <div style="background:#fff; padding:26px 24px;">
+      <div style="font-size:22px; margin-bottom:12px;">🔋</div>
+      <h3 style="font-weight:700; font-size:16px; margin:0 0 6px; letter-spacing:-0.2px;">Battery alerts</h3>
+      <p style="font-size:13.5px; line-height:1.5; color:#6E6A62; margin:0;">So you're never caught off guard.</p>
     </div>
-    <div style="background:#fff; padding:30px 26px;">
-      <div style="font-size:24px; margin-bottom:14px;">📶</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Works with weak signal</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Store-and-forward technology means the tracker never loses the story, even offline.</p>
-    </div>
-    <div style="background:#fff; padding:30px 26px;">
-      <div style="font-size:24px; margin-bottom:14px;">👪</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Multiple guardians</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Any guardian you trust can follow along, from their own phone.</p>
-    </div>
-    <div style="background:#fff; padding:30px 26px;">
-      <div style="font-size:24px; margin-bottom:14px;">🔋</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">Battery alerts</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">So you're never caught off guard.</p>
-    </div>
-    <div style="background:#fff; padding:30px 26px;">
-      <div style="font-size:24px; margin-bottom:14px;">🧭</div>
-      <h3 style="font-weight:700; font-size:17px; margin:0 0 7px; letter-spacing:-0.2px;">One-tap directions</h3>
-      <p style="font-size:14px; line-height:1.55; color:#6E6A62; margin:0;">Get directions straight to your child's last known location.</p>
+    <div style="background:#fff; padding:26px 24px;">
+      <div style="font-size:22px; margin-bottom:12px;">🧭</div>
+      <h3 style="font-weight:700; font-size:16px; margin:0 0 6px; letter-spacing:-0.2px;">One-tap directions</h3>
+      <p style="font-size:13.5px; line-height:1.5; color:#6E6A62; margin:0;">Get directions straight to your child's last known location.</p>
     </div>
   </div>
 </div>
