@@ -54,14 +54,13 @@ no build step — open `website/index.html`, or serve the folder:
 npx http-server website -p 4173
 ```
 
-Two things before it goes live:
+The screenshots and product photos live in `website/screens/` — see the README
+there for what each one is.
 
-- **Product artwork.** The eight screenshots and photos the page uses are not
-  committed. `website/screens/README.md` lists each one and where to get it.
-  The page lays out correctly without them, showing placeholder blocks.
-- **Waitlist delivery.** Signups are confirmed in the browser and go nowhere
-  yet. Set `WAITLIST_ENDPOINT` at the top of `website/main.js` to a collector
-  and each submission is POSTed as `{"email": "..."}` first.
+One thing before it goes live: **waitlist delivery**. Signups are confirmed in
+the browser and go nowhere yet. Set `WAITLIST_ENDPOINT` at the top of
+`website/main.js` to a collector and each submission is POSTed as
+`{"email": "..."}` first.
 
 ## When the physical trackers arrive
 

@@ -732,9 +732,8 @@ section[id] { scroll-margin-top: 80px; }
 .footer-legal { font-size: 14px; }
 
 /* ---------- missing-artwork fallback ----------
-   Product screenshots live in screens/ and are not committed (see
-   screens/README.md). Until they are dropped in, hold the layout with a
-   neutral block rather than showing a broken-image icon. */
+   If a file in screens/ ever goes missing, hold the layout with a neutral
+   block rather than showing a broken-image icon. */
 .shot.is-missing {
   background: linear-gradient(160deg, var(--mint-bg), #F3EFE6);
   border: 1px dashed rgba(15, 107, 63, .25);
@@ -747,4 +746,4 @@ section[id] { scroll-margin-top: 80px; }
   font-weight: 600;
 }
 .hardware-frame .shot.is-missing,
-.pricing-shot .shot.is-missing { aspect-ratio: 4 / 3; }
+.pricing-shot .shot.is-missing { aspect-ratio: 1 / 1; }
