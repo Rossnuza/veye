@@ -13,6 +13,7 @@
 <meta property="og:image" content="screens/tracker-app.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -58,7 +59,7 @@
         <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
         <input type="hidden" name="locale" value="en">
       </form>
-      <p class="signup-note" id="hero-note" role="status">Limited early access spots for our first launch.</p>
+      <p class="signup-note" id="hero-note">Limited early access spots for our first launch.</p>
     </div>
 
     <div class="hero-visual">
@@ -316,7 +317,7 @@
     <div class="waitlist">
       <h2 class="waitlist-title">Your child's safety shouldn't depend on luck.</h2>
       <p class="waitlist-sub">Join the waitlist today, and be first to know when veye launches.</p>
-      <!-- TODO: replace action URL with footer form's Brevo action URL once created -->
+      <!-- Shares the hero form's Brevo endpoint on purpose: one list, two entry points. -->
       <form class="signup signup--center" id="sib-form-footer" method="POST" action="https://7030009a.sibforms.com/serve/MUIFAPaE0q-VidbADWuhMEhkb3uORvUzJ_YVUbWdKQ_FvJpQTGZx5XKSDis9NJnsvHQK1sc40BgeLGl6J5NR59Zz3v9rHWWQlUv76VLrUvxL_9PlOK6_cHiTsGHRC87oLCHrZgSgXNOKjhRU305U8C_Yq06hZxpy-5sBlrOFFadof1tzZBJySv0B_B-8aVFWTFybVtRGmkmJgmFhzA==" data-type="subscription">
         <label class="sr-only" for="foot-name">First name</label>
         <input class="signup-name" id="foot-name" name="FIRSTNAME" type="text" autocomplete="given-name" placeholder="First name">
@@ -326,7 +327,7 @@
         <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
         <input type="hidden" name="locale" value="en">
       </form>
-      <p class="signup-note signup-note--dark" id="foot-note" role="status">We'll only email you when veye is ready.</p>
+      <p class="signup-note signup-note--dark" id="foot-note">We'll only email you when veye is ready.</p>
     </div>
   </section>
 

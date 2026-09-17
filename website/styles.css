@@ -347,9 +347,7 @@ section[id] { scroll-margin-top: 80px; }
   color: var(--note);
   font-weight: 400;
 }
-.signup-note.is-done { color: var(--green); font-weight: 600; }
 .signup-note--dark { margin: 16px 0 0; color: rgba(250, 246, 239, .5); }
-.signup-note--dark.is-done { color: var(--mint); font-weight: 400; }
 
 .hero-visual { display: flex; justify-content: center; }
 .hero-phone { position: relative; width: min(330px, 100% - 124px); }

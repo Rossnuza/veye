@@ -57,15 +57,31 @@ npx http-server website -p 4173
 The screenshots and product photos live in `website/screens/` — see the README
 there for what each one is.
 
-**Waitlist signups go to [Brevo](https://www.brevo.com).** Both forms POST
-straight to a Brevo endpoint — the `action` on each `<form>` in
-`website/index.html` — and Brevo's `end-form` script is loaded at the bottom of
-the page. Fields are `FIRSTNAME` (optional) and `EMAIL` (required), plus the
-`email_address_check` honeypot and `locale` that Brevo requires.
+**Waitlist signups go to [Brevo](https://www.brevo.com).** Both forms POST to
+the same Brevo endpoint — one list, two entry points — via the `action` on each
+`<form>` in `website/index.html`, with Brevo's `end-form` script loaded at the
+bottom of the page. Fields are `FIRSTNAME` (optional) and `EMAIL` (required),
+plus the `email_address_check` honeypot and `locale` that Brevo requires.
 
-One thing outstanding: the footer form still points at the **hero** form's
-Brevo endpoint, so both lists land in the same place. There is a `TODO` above
-it — swap in the footer form's own action URL once it exists in Brevo.
+To tell the two entry points apart later, add an attribute in Brevo and a
+matching hidden input to each form; Brevo ignores fields it doesn't know.
+
+## Deploying to Netlify
+
+`netlify.toml` at the repo root has the whole configuration: publish
+`website/`, no build command. Connect the repo in Netlify, pick this branch,
+and deploy — or drag the `website/` folder onto Netlify Drop for a one-off.
+
+```bash
+npx netlify-cli deploy --prod --dir website   # from the repo root
+```
+
+The config also sets the usual security headers, tells HTML/CSS/JS to
+revalidate (their filenames aren't hashed) and caches `screens/` for a year.
+
+One thing to change once the domain is live: `og:image` in
+`website/index.html` is a relative path, and some social scrapers want an
+absolute URL. Point it at `https://YOUR-DOMAIN/screens/tracker-app.jpg`.
 
 ## When the physical trackers arrive
 
@@ -135,9 +151,6 @@ Done and tested:
 
 Integration points left open (marked in the code, each is a small job):
 
-- **Footer waitlist form** — it posts to the hero form's Brevo endpoint for
-  now. Give it its own action URL once that form exists in Brevo (there is a
-  `TODO` on it in `website/index.html`).
 
 - **SMS delivery** for the login code and guardian invites — the server
   currently prints them to its log. Hook up MTN's SMS API or Twilio in
