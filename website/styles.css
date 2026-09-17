@@ -315,8 +315,12 @@ section[id] { scroll-margin-top: 80px; }
   flex-wrap: wrap;
   max-width: 470px;
 }
+/* First name and email share a row; the submit button takes the one below. */
+.signup-name  { flex: 1 1 130px; }
+.signup-email { flex: 1.5 1 170px; }
+.signup button { flex: 1 1 100%; }
+
 .signup input {
-  flex: 1 1 220px;
   min-width: 0;
   padding: 16px 18px;
   font-size: 16px;
@@ -333,7 +337,6 @@ section[id] { scroll-margin-top: 80px; }
   max-width: 500px;
 }
 .signup--center input {
-  flex: 1 1 230px;
   background: var(--cream);
   border: 1px solid rgba(250, 246, 239, .2);
 }

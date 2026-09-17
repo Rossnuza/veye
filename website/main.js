@@ -9,7 +9,7 @@
      Left empty deliberately: the page confirms client-side, exactly as the
      design does, and nothing is stored yet. Point this at a collector (the
      veye API, a form service, whatever you pick) and submissions are POSTed
-     as JSON {"email": "..."} before the confirmation shows. */
+     as JSON {"name": "...", "email": "..."} before the confirmation shows. */
   var WAITLIST_ENDPOINT = '';
 
   var doc = document;
@@ -73,14 +73,20 @@
     var note = doc.getElementById(noteId);
     if (!form || !note) return;
 
-    var input = form.querySelector('input[type="email"]');
+    var fields = Array.prototype.slice.call(form.querySelectorAll('input'));
+    var nameInput = form.querySelector('input[type="text"]');
+    var emailInput = form.querySelector('input[type="email"]');
     var button = form.querySelector('button[type="submit"]');
 
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-      if (!input || !input.checkValidity()) {
-        if (input) input.reportValidity();
-        return;
+
+      // Surface the first problem the same way the browser would.
+      for (var i = 0; i < fields.length; i++) {
+        if (!fields[i].checkValidity()) {
+          fields[i].reportValidity();
+          return;
+        }
       }
 
       function showConfirmation() {
@@ -98,7 +104,10 @@
       fetch(WAITLIST_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: input.value })
+        body: JSON.stringify({
+          name: nameInput ? nameInput.value.trim() : '',
+          email: emailInput ? emailInput.value.trim() : ''
+        })
       }).then(function (response) {
         if (!response.ok) throw new Error('Signup failed: ' + response.status);
         showConfirmation();

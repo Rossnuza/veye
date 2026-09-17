@@ -60,7 +60,7 @@ there for what each one is.
 One thing before it goes live: **waitlist delivery**. Signups are confirmed in
 the browser and go nowhere yet. Set `WAITLIST_ENDPOINT` at the top of
 `website/main.js` to a collector and each submission is POSTed as
-`{"email": "..."}` first.
+`{"name": "...", "email": "..."}` first.
 
 ## When the physical trackers arrive
 
