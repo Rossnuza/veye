@@ -14,7 +14,7 @@ design project the page was built from:
 | `guardians.png` | `uploads/Multiple guardians.png` | feature 04, guardians |
 | `settings.png` | `uploads/Setting Screen .png` | feature 05, settings |
 | `tracker-app.jpg` | `uploads/Generated Image September 12, 2026 - 11_13PM.jpg` | the hardware section |
-| `tracker-box.jpeg` | `uploads/Firsat generation.jpeg` | the pricing panel |
+| `tracker-box.jpeg` | supplied directly as `final Product render.jpg` | the pricing panel |
 
 The six `.png` files are parent-app screenshots, roughly 880×1800. The two
 photos show the tracker itself.
