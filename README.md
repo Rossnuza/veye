@@ -57,10 +57,15 @@ npx http-server website -p 4173
 The screenshots and product photos live in `website/screens/` — see the README
 there for what each one is.
 
-One thing before it goes live: **waitlist delivery**. Signups are confirmed in
-the browser and go nowhere yet. Set `WAITLIST_ENDPOINT` at the top of
-`website/main.js` to a collector and each submission is POSTed as
-`{"name": "...", "email": "..."}` first.
+**Waitlist signups go to [Brevo](https://www.brevo.com).** Both forms POST
+straight to a Brevo endpoint — the `action` on each `<form>` in
+`website/index.html` — and Brevo's `end-form` script is loaded at the bottom of
+the page. Fields are `FIRSTNAME` (optional) and `EMAIL` (required), plus the
+`email_address_check` honeypot and `locale` that Brevo requires.
+
+One thing outstanding: the footer form still points at the **hero** form's
+Brevo endpoint, so both lists land in the same place. There is a `TODO` above
+it — swap in the footer form's own action URL once it exists in Brevo.
 
 ## When the physical trackers arrive
 
@@ -130,8 +135,9 @@ Done and tested:
 
 Integration points left open (marked in the code, each is a small job):
 
-- **Waitlist delivery** — the landing page confirms signups in the browser but
-  does not store them. Set `WAITLIST_ENDPOINT` in `website/main.js`.
+- **Footer waitlist form** — it posts to the hero form's Brevo endpoint for
+  now. Give it its own action URL once that form exists in Brevo (there is a
+  `TODO` on it in `website/index.html`).
 
 - **SMS delivery** for the login code and guardian invites — the server
   currently prints them to its log. Hook up MTN's SMS API or Twilio in

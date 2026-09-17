@@ -1,16 +1,13 @@
 /* veye landing page behaviour.
    Mirrors the interaction logic of the approved design ("veye Landing Page.dc.html"):
-   scroll reveal, a single-open FAQ accordion, and the two waitlist forms. */
+   scroll reveal and a single-open FAQ accordion. */
 
 (function () {
   'use strict';
 
-  /* Where waitlist signups are sent.
-     Left empty deliberately: the page confirms client-side, exactly as the
-     design does, and nothing is stored yet. Point this at a collector (the
-     veye API, a form service, whatever you pick) and submissions are POSTed
-     as JSON {"name": "...", "email": "..."} before the confirmation shows. */
-  var WAITLIST_ENDPOINT = '';
+  /* The two waitlist forms POST straight to Brevo (see the action attributes
+     in index.html), so there is no submit handler here — Brevo's end-form
+     script, loaded at the bottom of the page, takes them from there. */
 
   var doc = document;
 
@@ -66,64 +63,10 @@
     });
   }
 
-  /* ---------- waitlist forms ---------- */
-
-  function initForm(formId, noteId, doneText) {
-    var form = doc.getElementById(formId);
-    var note = doc.getElementById(noteId);
-    if (!form || !note) return;
-
-    var fields = Array.prototype.slice.call(form.querySelectorAll('input'));
-    var nameInput = form.querySelector('input[type="text"]');
-    var emailInput = form.querySelector('input[type="email"]');
-    var button = form.querySelector('button[type="submit"]');
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // Surface the first problem the same way the browser would.
-      for (var i = 0; i < fields.length; i++) {
-        if (!fields[i].checkValidity()) {
-          fields[i].reportValidity();
-          return;
-        }
-      }
-
-      function showConfirmation() {
-        note.textContent = doneText;
-        note.classList.add('is-done');
-        form.reset();
-      }
-
-      if (!WAITLIST_ENDPOINT) {
-        showConfirmation();
-        return;
-      }
-
-      if (button) button.disabled = true;
-      fetch(WAITLIST_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: nameInput ? nameInput.value.trim() : '',
-          email: emailInput ? emailInput.value.trim() : ''
-        })
-      }).then(function (response) {
-        if (!response.ok) throw new Error('Signup failed: ' + response.status);
-        showConfirmation();
-      }).catch(function () {
-        note.textContent = "That didn't go through. Please try again, or email hello@veye.app.";
-        note.classList.remove('is-done');
-      }).then(function () {
-        if (button) button.disabled = false;
-      });
-    });
-  }
-
   /* ---------- artwork fallback ---------- */
 
-  /* The product screenshots are not committed (see screens/README.md).
-     If one is missing, keep the layout intact instead of showing a broken icon. */
+  /* If a file in screens/ ever goes missing, keep the layout intact instead of
+     showing a broken icon. */
   function initShots() {
     Array.prototype.slice.call(doc.querySelectorAll('img.shot')).forEach(function (img) {
       img.addEventListener('error', function () { img.classList.add('is-missing'); });
@@ -135,8 +78,6 @@
     initShots();
     initReveal();
     initFaq();
-    initForm('hero-form', 'hero-note', "You're on the list. We'll email you the moment veye launches.");
-    initForm('foot-form', 'foot-note', "Thanks, you're on the list. We'll be in touch soon.");
   }
 
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', init);
