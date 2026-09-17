@@ -55,9 +55,11 @@
         <input class="signup-name" id="hero-name" name="FIRSTNAME" type="text" autocomplete="given-name" placeholder="First name">
         <label class="sr-only" for="hero-email">Email address</label>
         <input class="signup-email" id="hero-email" name="EMAIL" type="email" required autocomplete="email" placeholder="you@email.com">
-        <button class="btn-green" type="submit">Join the Waitlist</button>
+        <button class="btn-green" type="submit" data-busy="Joining…">Join the Waitlist</button>
         <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
         <input type="hidden" name="locale" value="en">
+        <p class="signup-status signup-status--ok" role="status" hidden>You're on the list. Check your email for a welcome message.</p>
+        <p class="signup-status signup-status--error" role="alert" hidden>Something went wrong. Please try again, or check your connection.</p>
       </form>
       <p class="signup-note" id="hero-note">Limited early access spots for our first launch.</p>
     </div>
@@ -323,9 +325,11 @@
         <input class="signup-name" id="foot-name" name="FIRSTNAME" type="text" autocomplete="given-name" placeholder="First name">
         <label class="sr-only" for="foot-email">Email address</label>
         <input class="signup-email" id="foot-email" name="EMAIL" type="email" required autocomplete="email" placeholder="you@email.com">
-        <button class="btn-green btn-green--alt" type="submit">Reserve My Spot</button>
+        <button class="btn-green btn-green--alt" type="submit" data-busy="Reserving…">Reserve My Spot</button>
         <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
         <input type="hidden" name="locale" value="en">
+        <p class="signup-status signup-status--ok" role="status" hidden>You're on the list. Check your email for a welcome message.</p>
+        <p class="signup-status signup-status--error" role="alert" hidden>Something went wrong. Please try again, or check your connection.</p>
       </form>
       <p class="signup-note signup-note--dark" id="foot-note">We'll only email you when veye is ready.</p>
     </div>
@@ -345,6 +349,5 @@
 </footer>
 
 <script src="main.js"></script>
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>

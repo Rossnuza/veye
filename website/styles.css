@@ -15,6 +15,8 @@
   --mint-bg: #E8F1EA;
   --on-mint: #41544A;
   --white: #FFFFFF;
+  --warn: #A33B22;
+  --warn-on-dark: #F2B8A5;
   --hairline: rgba(27, 26, 23, .055);
   --shadow-card: 0 1px 2px rgba(27, 26, 23, .03);
   color-scheme: light;
@@ -340,6 +342,25 @@ section[id] { scroll-margin-top: 80px; }
   background: var(--cream);
   border: 1px solid rgba(250, 246, 239, .2);
 }
+
+/* Waitlist submit states. The message takes a full row of its own, so it sits
+   directly under the button when the form is still showing, and fills the
+   pinned box once the controls are swapped out. */
+.signup-status {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.signup-status--ok { color: var(--green); font-weight: 600; }
+.signup-status--error { color: var(--warn); }
+
+/* The footer form sits on the dark band and needs the lighter pair. */
+.signup--center .signup-status--ok { color: var(--mint); }
+.signup--center .signup-status--error { color: var(--warn-on-dark); }
+
+.signup.is-sent { align-items: center; }
+.signup.is-sent > *:not(.signup-status) { display: none; }
 
 .signup-note {
   margin: 14px 0 0;
