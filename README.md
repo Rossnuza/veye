@@ -10,6 +10,7 @@ This repository contains the complete product:
 | --- | --- |
 | `app/` | The parent mobile app (Android + iOS, built with Expo / React Native) |
 | `server/` | The backend: speaks the **EELINK V2.3 protocol** to the physical trackers and serves the app |
+| `website/` | The public landing page and waitlist (static HTML/CSS/JS) |
 | `docs/` | How the app, server, and tracker fit together |
 
 ---
@@ -43,6 +44,24 @@ Walkthrough:
 5. You're in. Explore the map, History, Zones, and Settings tabs.
    The child switcher (tap the name at the top) shows two extra demo
    children, including a "signal lost" and a "tracker off" state.
+
+## The landing page
+
+`website/` is the public marketing page and waitlist. It is a static site with
+no build step — open `website/index.html`, or serve the folder:
+
+```bash
+npx http-server website -p 4173
+```
+
+Two things before it goes live:
+
+- **Product artwork.** The eight screenshots and photos the page uses are not
+  committed. `website/screens/README.md` lists each one and where to get it.
+  The page lays out correctly without them, showing placeholder blocks.
+- **Waitlist delivery.** Signups are confirmed in the browser and go nowhere
+  yet. Set `WAITLIST_ENDPOINT` at the top of `website/main.js` to a collector
+  and each submission is POSTed as `{"email": "..."}` first.
 
 ## When the physical trackers arrive
 
@@ -108,8 +127,12 @@ Done and tested:
 - Server-side safe zones with arrive/leave alerts, journey history, guardians
   with shared access, pair-code device registration
 - Automated end-to-end test: simulated tracker → gateway → API → app data
+- Public landing page and waitlist matching the approved design
 
 Integration points left open (marked in the code, each is a small job):
+
+- **Waitlist delivery** — the landing page confirms signups in the browser but
+  does not store them. Set `WAITLIST_ENDPOINT` in `website/main.js`.
 
 - **SMS delivery** for the login code and guardian invites — the server
   currently prints them to its log. Hook up MTN's SMS API or Twilio in
