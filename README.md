@@ -10,6 +10,7 @@ This repository contains the complete product:
 | --- | --- |
 | `app/` | The parent mobile app (Android + iOS, built with Expo / React Native) |
 | `server/` | The backend: speaks the **EELINK V2.3 protocol** to the physical trackers and serves the app |
+| `website/` | The public landing page and waitlist (static HTML/CSS/JS) |
 | `docs/` | How the app, server, and tracker fit together |
 
 ---
@@ -43,6 +44,44 @@ Walkthrough:
 5. You're in. Explore the map, History, Zones, and Settings tabs.
    The child switcher (tap the name at the top) shows two extra demo
    children, including a "signal lost" and a "tracker off" state.
+
+## The landing page
+
+`website/` is the public marketing page and waitlist. It is a static site with
+no build step — open `website/index.html`, or serve the folder:
+
+```bash
+npx http-server website -p 4173
+```
+
+The screenshots and product photos live in `website/screens/` — see the README
+there for what each one is.
+
+**Waitlist signups go to [Brevo](https://www.brevo.com).** Both forms POST to
+the same Brevo endpoint — one list, two entry points — via the `action` on each
+`<form>` in `website/index.html`, with Brevo's `end-form` script loaded at the
+bottom of the page. Fields are `FIRSTNAME` (optional) and `EMAIL` (required),
+plus the `email_address_check` honeypot and `locale` that Brevo requires.
+
+To tell the two entry points apart later, add an attribute in Brevo and a
+matching hidden input to each form; Brevo ignores fields it doesn't know.
+
+## Deploying to Netlify
+
+`netlify.toml` at the repo root has the whole configuration: publish
+`website/`, no build command. Connect the repo in Netlify, pick this branch,
+and deploy — or drag the `website/` folder onto Netlify Drop for a one-off.
+
+```bash
+npx netlify-cli deploy --prod --dir website   # from the repo root
+```
+
+The config also sets the usual security headers, tells HTML/CSS/JS to
+revalidate (their filenames aren't hashed) and caches `screens/` for a year.
+
+One thing to change once the domain is live: `og:image` in
+`website/index.html` is a relative path, and some social scrapers want an
+absolute URL. Point it at `https://YOUR-DOMAIN/screens/tracker-app.jpg`.
 
 ## When the physical trackers arrive
 
@@ -108,8 +147,10 @@ Done and tested:
 - Server-side safe zones with arrive/leave alerts, journey history, guardians
   with shared access, pair-code device registration
 - Automated end-to-end test: simulated tracker → gateway → API → app data
+- Public landing page and waitlist matching the approved design
 
 Integration points left open (marked in the code, each is a small job):
+
 
 - **SMS delivery** for the login code and guardian invites — the server
   currently prints them to its log. Hook up MTN's SMS API or Twilio in

@@ -1,0 +1,48 @@
+# Netlify config for the veye landing page.
+#
+# The site is plain HTML/CSS/JS with no build step, so Netlify only has to
+# publish the folder. Connect the repo, pick this branch, and deploy.
+
+[build]
+  publish = "website"
+
+# No build command on purpose — there is nothing to compile.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+
+# HTML, CSS and JS are served from unhashed filenames, so they must revalidate.
+# Netlify still answers with a 304 when nothing changed — this only prevents a
+# stale copy surviving a deploy.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# The artwork is content-stable: a replacement gets a new filename.
+[[headers]]
+  for = "/screens/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# screens/README.md documents the artwork for whoever edits the repo; it is not
+# part of the site.
+[[redirects]]
+  from = "/screens/README.md"
+  to = "/404.html"
+  status = 404
